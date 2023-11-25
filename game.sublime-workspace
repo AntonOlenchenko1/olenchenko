@@ -1,0 +1,246 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+		]
+	},
+	"buffers":
+	[
+		{
+			"contents": "import PySimpleGUI as sg\nimport random\n\ndef play_guess_the_number():\n    secret_number = random.randint(1, 100)\n    attempts = 0\n\n    layout = [\n        [sg.Text(\"Вгадайте число від 1 до 100.\")],\n        [sg.InputText(key=\"input_guess\"), sg.Button(\"Вгадати\")],\n        [sg.Text(\"\", size=(20, 1), key=\"output_message\")]\n    ]\n\n    window = sg.Window(\"Гра 'Вгадай число'\", layout, finalize=True)\n\n    while True:\n        event, values = window.read()\n\n        if event == sg.WIN_CLOSED:\n            break\n\n        if event == \"Вгадати\":\n            try:\n                user_guess = int(values[\"input_guess\"])\n            except ValueError:\n                window[\"output_message\"].update(\"Введіть коректне число.\")\n                continue\n\n            attempts += 1\n\n            if user_guess < secret_number:\n                window[\"output_message\"].update(\"Загадане число більше. Спробуйте ще раз.\")\n            elif user_guess > secret_number:\n                window[\"output_message\"].update(\"Загадане число менше. Спробуйте ще раз.\")\n            else:\n                sg.popup_ok(f\"Вітаємо! Ви вгадали число {secret_number} за {attempts} спроб.\")\n                break\n\n    window.close()\n\nif __name__ == \"__main__\":\n    play_guess_the_number()\n",
+			"file": "game.py.py",
+			"file_size": 1408,
+			"file_write_time": 133454009909230746,
+			"settings":
+			{
+				"buffer_size": 1249,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "Packages/Python/Python.sublime-build",
+	"build_system_choices":
+	[
+		[
+			[
+				[
+					"Packages/Python/Python.sublime-build",
+					""
+				],
+				[
+					"Packages/Python/Python.sublime-build",
+					"Syntax Check"
+				]
+			],
+			[
+				"Packages/Python/Python.sublime-build",
+				""
+			]
+		]
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"",
+				"Build With: Python - Syntax Check"
+			],
+			[
+				"Package Control: ",
+				"Package Control: Upgrade/Overwrite All Packages"
+			]
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 157.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/C/Users/User/Desktop/data_base (1).py",
+		"/C/Users/User/Desktop/gamelogic.py",
+		"/C/Users/User/Desktop/main.py",
+		"/C/Users/User/AppData/Roaming/Sublime Text 3/Packages/User/flappy bird.html",
+		"/C/Users/User/Desktop/game/game.js",
+		"/C/Users/User/Documents/шифр",
+		"/C/Users/User/Desktop/бд/pip install mysql-connector-python",
+		"/C/Users/User/Documents/Olenchenko_lab2",
+		"/C/Users/User/Documents/лічильник.html",
+		"/D/Sublime Text 3/index.html",
+		"/C/Users/User/Documents/Новая папка/index.html"
+	],
+	"find":
+	{
+		"height": 0.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "game.py.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1249,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								38,
+								38
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 0.0
+	},
+	"input":
+	{
+		"height": 0.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 244.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "Packages/Python/Python.sublime-build",
+	"project": "game.py",
+	"replace":
+	{
+		"height": 0.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 150.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
